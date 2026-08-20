@@ -2,7 +2,7 @@
 
 ## Project Title: LocalSearch — Python Keyword Search Engine
 **Academic Challenge:** Project #33 — Keyword Search Engine  
-**Author:** Senior Python Software Engineer & Technical Documentation Specialist  
+**Author:** Devansh  
 **Domain:** Information Retrieval, Natural Language Processing, Software Architecture  
 
 ---

@@ -24,8 +24,8 @@ Status: ALL TESTS PASSED
 
 | Test ID | Scenario | Input | Expected Result | Actual Result | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **TC-01** | Normal Single Keyword Search | `"python"` | Returns matching documents containing term `"python"`, ranked by TF-IDF score. | Returned `python.txt` (#1, Score 0.1217) and `machine_learning.txt` with scores > 0. | **PASS** |
-| **TC-02** | Multiple Keywords Search & Ranking | `"machine learning"` | Returns documents matching any query term, ranked by aggregated score descending. | Returned `machine_learning.txt` (#1, Score 0.2314) followed by `python.txt` (#2, Score 0.0270). | **PASS** |
+| **TC-01** | Normal Single Keyword Search | `"python"` | Returns matching documents containing term `"python"`, ranked by TF-IDF score. | Returned `python.txt` (#1, Score 0.0811) and `web_development.txt` (#2, Score 0.0226) with scores > 0. | **PASS** |
+| **TC-02** | Multiple Keywords Search & Ranking | `"machine learning"` | Returns documents matching any query term, ranked by aggregated score descending. | Returned `machine_learning.txt` (#1, Score 0.2121) followed by `artificial_intelligence.txt` (#2, Score 0.0452) and `python.txt` (#3, Score 0.0406). | **PASS** |
 | **TC-03** | No Results Search | `"xyznonexistentterm"` | Returns empty result list without throwing an error or crashing. | Returned 0 results with message `"No matching documents found"`. | **PASS** |
 | **TC-04** | Empty Query Validation | `""` or `"   "` | Throws `ValueError` and displays clean validation error message. | Raised `ValueError("Search query cannot be empty")` and rejected input. | **PASS** |
 | **TC-05** | Invalid Directory Path | `"/nonexistent/path"` | Throws `FileNotFoundError` and displays path validation error message. | Raised `FileNotFoundError` and returned controlled validation error. | **PASS** |
