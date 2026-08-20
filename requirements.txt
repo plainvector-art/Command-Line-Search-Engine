@@ -1,0 +1,6 @@
+# LocalSearch — Python Keyword Search Engine Dependencies
+# All libraries are free and open-source
+
+pytest>=8.0.0
+streamlit>=1.30.0
+pandas>=2.0.0

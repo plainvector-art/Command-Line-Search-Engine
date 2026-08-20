@@ -1,0 +1,62 @@
+{
+  "folder_path": "data/documents",
+  "documents": {
+    "artificial_intelligence.txt": {
+      "doc_id": "artificial_intelligence.txt",
+      "filename": "artificial_intelligence.txt",
+      "filepath": "C:\\Users\\Nyx\\.gemini\\antigravity\\scratch\\Command-Line-Search-Engine\\data\\documents\\artificial_intelligence.txt",
+      "word_count": 52,
+      "char_count": 416,
+      "line_count": 1
+    },
+    "databases.txt": {
+      "doc_id": "databases.txt",
+      "filename": "databases.txt",
+      "filepath": "C:\\Users\\Nyx\\.gemini\\antigravity\\scratch\\Command-Line-Search-Engine\\data\\documents\\databases.txt",
+      "word_count": 51,
+      "char_count": 392,
+      "line_count": 1
+    },
+    "machine_learning.txt": {
+      "doc_id": "machine_learning.txt",
+      "filename": "machine_learning.txt",
+      "filepath": "C:\\Users\\Nyx\\.gemini\\antigravity\\scratch\\Command-Line-Search-Engine\\data\\documents\\machine_learning.txt",
+      "word_count": 61,
+      "char_count": 472,
+      "line_count": 1
+    },
+    "python.txt": {
+      "doc_id": "python.txt",
+      "filename": "python.txt",
+      "filepath": "C:\\Users\\Nyx\\.gemini\\antigravity\\scratch\\Command-Line-Search-Engine\\data\\documents\\python.txt",
+      "word_count": 58,
+      "char_count": 444,
+      "line_count": 1
+    },
+    "web_development.txt": {
+      "doc_id": "web_development.txt",
+      "filename": "web_development.txt",
+      "filepath": "C:\\Users\\Nyx\\.gemini\\antigravity\\scratch\\Command-Line-Search-Engine\\data\\documents\\web_development.txt",
+      "word_count": 52,
+      "char_count": 400,
+      "line_count": 1
+    }
+  },
+  "document_lines": {
+    "artificial_intelligence.txt": [
+      "Artificial intelligence refers to the simulation of human intelligence in machines programmed to think and learn. Artificial intelligence encompasses natural language processing, computer vision, robotics, and machine learning. Modern artificial intelligence systems utilize deep neural networks and large language models for complex problem solving, decision making, and automated reasoning across various domains."
+    ],
+    "databases.txt": [
+      "Databases are organized collections of structured information or data stored electronically in a computer system. Relational database management systems use SQL queries for data retrieval and transactional consistency. NoSQL databases provide flexible data models for unstructured or high-velocity data. Indexing strategies in databases optimize search performance and query execution speed."
+    ],
+    "machine_learning.txt": [
+      "Machine learning is a subset of artificial intelligence focused on building systems that learn from data. Machine learning algorithms discover patterns in datasets to make predictions or decisions without being explicitly programmed. Supervised learning, unsupervised learning, and reinforcement learning are core machine learning paradigms. Python libraries like scikit-learn, TensorFlow, and PyTorch power modern machine learning applications and neural network models."
+    ],
+    "python.txt": [
+      "Python is a high-level, interpreted programming language known for its clear syntax and readability. Python supports multiple programming paradigms, including object-oriented, functional, and procedural programming. Python is widely used in data science, machine learning, web development, script automation, and artificial intelligence. Many developers choose Python because of its extensive standard library and active open-source ecosystem."
+    ],
+    "web_development.txt": [
+      "Web development involves building and maintaining websites and web applications for the internet. Frontend development focuses on user interface design using HTML, CSS, and JavaScript. Backend development manages server logic, databases, and application programming interfaces. Python web frameworks such as Django, Flask, and FastAPI facilitate rapid backend development and secure data processing."
+    ]
+  }
+}
