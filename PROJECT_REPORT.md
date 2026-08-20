@@ -201,22 +201,25 @@ All realistic runtime errors are handled using targeted `try/except` blocks:
 
 ## 13. Testing
 
-The application includes 11 automated unit tests written for `pytest`:
+The application includes 14 automated unit tests written for `pytest`:
 
 ```text
-tests/test_search_engine.py::test_normal_single_keyword_search PASSED
-tests/test_search_engine.py::test_multiple_keyword_search PASSED
-tests/test_search_engine.py::test_no_results_search PASSED
-tests/test_search_engine.py::test_empty_query_validation PASSED
-tests/test_search_engine.py::test_invalid_folder_validation PASSED
-tests/test_search_engine.py::test_case_insensitive_search PASSED
-tests/test_search_engine.py::test_empty_document_handling PASSED
-tests/test_search_engine.py::test_reindexing_idempotency PASSED
-tests/test_search_engine.py::test_persistence_save_load PASSED
-tests/test_search_engine.py::test_rebuild_index PASSED
-tests/test_search_engine.py::test_result_limit_validation PASSED
+tests/test_search_engine.py::test_normal_single_keyword_search PASSED    [  7%]
+tests/test_search_engine.py::test_multiple_keyword_search PASSED         [ 14%]
+tests/test_search_engine.py::test_no_results_search PASSED               [ 21%]
+tests/test_search_engine.py::test_empty_query_validation PASSED          [ 28%]
+tests/test_search_engine.py::test_invalid_folder_validation PASSED       [ 35%]
+tests/test_search_engine.py::test_case_insensitive_search PASSED         [ 42%]
+tests/test_search_engine.py::test_empty_document_handling PASSED         [ 50%]
+tests/test_search_engine.py::test_reindexing_idempotency PASSED          [ 57%]
+tests/test_search_engine.py::test_persistence_save_load PASSED           [ 64%]
+tests/test_search_engine.py::test_rebuild_index PASSED                   [ 71%]
+tests/test_search_engine.py::test_result_limit_validation PASSED         [ 78%]
+tests/test_search_engine.py::test_unsupported_file_format_ignored PASSED [ 85%]
+tests/test_search_engine.py::test_corrupted_json_handling PASSED         [ 92%]
+tests/test_search_engine.py::test_missing_index_file_handling PASSED     [100%]
 
-11 passed in 0.28s
+============================= 14 passed in 0.20s ==============================
 ```
 
 ---
@@ -255,4 +258,4 @@ tests/test_search_engine.py::test_result_limit_validation PASSED
 
 ## 18. Conclusion
 
-**LocalSearch** successfully transforms the initial codebase into a submission-ready, offline Python keyword search engine. It demonstrates clean modular software architecture, data structure design, mathematical relevance scoring, persistent storage, input validation, robust error handling, automated testing, and comprehensive technical documentation.
+**LocalSearch** successfully transforms the initial codebase into a submission-ready, offline Python keyword search engine. It demonstrates clean modular software architecture, data structure design, mathematical relevance scoring, persistent storage, input validation, robust error handling, automated testing, real PNG screenshot evidence, and comprehensive technical documentation.

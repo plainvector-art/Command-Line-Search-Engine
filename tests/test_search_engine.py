@@ -1,6 +1,6 @@
 """
 Automated unit tests for LocalSearch Keyword Search Engine.
-Covers indexing, searching, ranking, validation, persistence, and edge cases.
+Covers indexing, searching, ranking, validation, persistence, edge cases, and corruption recovery.
 """
 
 import os
@@ -203,7 +203,7 @@ def test_rebuild_index(temp_corpus_dir, temp_storage_dir):
     assert res_after[0].filename == "crypto.txt"
 
 
-# Test 11 — Validation helpers
+# Test 11 — Result limit validation
 def test_result_limit_validation():
     valid, limit, err = validate_result_limit("5")
     assert valid and limit == 5
@@ -215,3 +215,47 @@ def test_result_limit_validation():
     valid, limit, err = validate_result_limit("abc")
     assert not valid
     assert "invalid" in err.lower()
+
+
+# Test 12 — Unsupported file format handling
+def test_unsupported_file_format_ignored(temp_corpus_dir):
+    # Place unsupported .pdf and .bin files in corpus
+    with open(os.path.join(temp_corpus_dir, "document.pdf"), "wb") as f:
+        f.write(b"%PDF-1.4 binary data")
+    with open(os.path.join(temp_corpus_dir, "image.png"), "wb") as f:
+        f.write(b"\x89PNG binary image")
+
+    indexer = DocumentIndexer()
+    count, warnings = indexer.index_directory(temp_corpus_dir)
+
+    # Unsupported files must be safely ignored
+    assert count == 4
+    assert "document.pdf" not in indexer.documents
+    assert "image.png" not in indexer.documents
+
+
+# Test 13 — Corrupted JSON persistence handling
+def test_corrupted_json_handling(temp_storage_dir):
+    indexer = DocumentIndexer()
+    storage = IndexStorage(storage_dir=temp_storage_dir)
+
+    # Write corrupted JSON to index.json
+    with open(storage.get_index_file_path(), "w", encoding="utf-8") as f:
+        f.write("{corrupted_json_data:")
+    with open(storage.get_metadata_file_path(), "w", encoding="utf-8") as f:
+        f.write('{"documents": {}}')
+
+    loaded, msg = storage.load(indexer)
+    assert not loaded
+    assert "corrupted" in msg.lower() or "unreadable" in msg.lower()
+
+
+# Test 14 — Missing index file handling
+def test_missing_index_file_handling(temp_storage_dir):
+    indexer = DocumentIndexer()
+    storage = IndexStorage(storage_dir=temp_storage_dir)
+
+    # Attempt to load from empty directory
+    loaded, msg = storage.load(indexer)
+    assert not loaded
+    assert "no saved index found" in msg.lower()
